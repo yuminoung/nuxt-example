@@ -11,7 +11,8 @@ module.exports = {
       'baloo': ['Baloo\\ 2', 'cursive'],
       'roboto-mono': ['Roboto\\ Mono', 'monospace'],
       'noto-sans': ['Noto\\ Sans', 'sans-serif'],
-      'roboto': ['Roboto', 'sans-serif']
+      'roboto': ['Roboto', 'sans-serif'],
+      'inter': ['Inter', 'sans-serif']
     }
   },
   variants: {},

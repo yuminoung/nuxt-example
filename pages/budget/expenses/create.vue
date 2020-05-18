@@ -2,6 +2,7 @@
     <div>
         <BudgetNavigation expenses="active" />
         <Headline title="Create" />
+        <!-- {{ expensesCreate }} -->
         <Form>
             <FormInput
                 id="amount"
@@ -15,8 +16,17 @@
                 :values="{ 1: 'Woolworths', 2: 'Coles' }"
                 store="budget/expenses/create/updateCategory"
             />
-            <FormDate id="date" label="Date" />
-            <FormTextarea id="note" label="Note" />
+            <FormDate
+                id="date"
+                label="Date"
+                store="budget/expenses/create/updateDate"
+            />
+            <FormTextarea
+                id="note"
+                label="Note"
+                store="budget/expenses/create/updateNote"
+                :value="expensesCreate.form.note"
+            />
             <FormSubmit value="Create" />
         </Form>
     </div>

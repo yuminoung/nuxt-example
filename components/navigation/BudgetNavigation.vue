@@ -1,20 +1,40 @@
 <template>
     <div
-        class="flex flex-col md:flex-row md:items-center shadow p-4 md:space-x-4 rounded bg-white"
+        class=" hidden md:visible flex flex-col md:flex-row md:items-center md:space-x-4"
     >
-        <nuxt-link to="/budget" :class="{ 'font-bold': budget }">
+        <nuxt-link
+            to="/budget"
+            class="p-4 rounded bg-white shadow"
+            :class="{ 'bg-gray-800 text-white': budget }"
+        >
             Budget
         </nuxt-link>
-        <nuxt-link to="/budget/categories" :class="{ 'font-bold': categories }">
+        <nuxt-link
+            to="/budget/categories"
+            class="p-4 rounded bg-white shadow"
+            :class="{ 'bg-gray-800 text-white': categories }"
+        >
             Categories
         </nuxt-link>
-        <nuxt-link to="/budget/expenses" :class="{ 'font-bold': expenses }">
+        <nuxt-link
+            to="/budget/expenses"
+            class="p-4 rounded bg-white shadow"
+            :class="{ 'bg-gray-800 text-white': expenses }"
+        >
             Expenses
         </nuxt-link>
-        <nuxt-link to="/budget/income" :class="{ 'font-bold': income }">
+        <nuxt-link
+            to="/budget/income"
+            class="p-4 rounded bg-white shadow"
+            :class="{ 'bg-gray-800 text-white': income }"
+        >
             Income
         </nuxt-link>
-        <nuxt-link to="/budget/report" :class="{ 'font-bold': report }">
+        <nuxt-link
+            to="/budget/report"
+            class="p-4 rounded bg-white shadow"
+            :class="{ 'bg-gray-800 text-white': report }"
+        >
             Report
         </nuxt-link>
     </div>

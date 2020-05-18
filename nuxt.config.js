@@ -18,7 +18,11 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&family=Baloo+Bhaina+2:wght@400;700&family=Jost:wght@400;700&family=Noto+Sans:wght@400;700&family=Roboto+Mono:wght@400;700&family=Roboto:wght@400;700&display=swap'
-      }]
+      },
+      {
+        rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet'
+      }
+    ]
   },
   /*
    ** Customize the progress-bar color

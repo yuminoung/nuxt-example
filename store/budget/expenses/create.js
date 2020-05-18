@@ -17,6 +17,9 @@ export default {
         },
         updateDate(state, value) {
             state.form.date = value
+        },
+        updateNote(state, value) {
+            state.form.note = value
         }
     },
     actions: {}

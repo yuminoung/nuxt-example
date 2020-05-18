@@ -1,58 +1,68 @@
 <template>
     <div
         v-show="showDatePicker"
-        class="flex inset-0 absolute mx-auto items-center justify-center bg-gray-100"
+        class="flex flex-col inset-0 fixed mx-auto items-center bg-gray-100 space-y-4 bg-opacity-5"
     >
         <div
-            class="grid grid-cols-7 rounded p-4 bg-white shadow text-center cursor-default"
+            class="flex flex-col w-full p-4 md:px-0 md:w-1/2 mx-auto space-y-4 h-screen"
         >
-            <div class=" col-span-7 p-4 font-bold">
-                {{ formattedDate() }}
+            <div class="text-2xl font-bold px-4">
+                Date
             </div>
-            <!-- months -->
-            <div class="col-span-1 p-4 cursor-pointer">
-                &lt;
-            </div>
-            <div class="col-span-2 p-4">
-                {{ months[selectedMonth] }}
-            </div>
-            <div class="col-span-1 p-4 cursor-pointer">
-                &gt;
-            </div>
-            <!-- year -->
-            <div class="col-span-1 p-4 cursor-pointer">
-                &lt;
-            </div>
-            <div class="col-span-1 p-4">
-                {{ selectedYear }}
-            </div>
-            <div class="col-span-1 p-4 cursor-pointer">
-                &gt;
-            </div>
-            <!-- days -->
-            <div v-for="day in days" :key="day.id" class="p-4">
-                {{ day }}
-            </div>
-            <!-- dates -->
-            <div v-for="day in monthTotalDay() + monthFirstDay()" :key="day.id">
-                <div v-if="day <= monthFirstDay()"></div>
-                <div
-                    v-else-if="day === selectedDay + monthFirstDay()"
-                    class="p-4 bg-gray-800 text-white rounded"
-                >
-                    {{ day - monthFirstDay() }}
+            <div
+                class="w-full grid grid-cols-7 rounded p-4 bg-white shadow text-center cursor-default"
+            >
+                <!-- months -->
+                <div class="col-span-1 py-4 cursor-pointer">
+                    &lt;
                 </div>
+                <div class="col-span-2 py-4">
+                    {{ months[selectedMonth] }}
+                </div>
+                <div class="col-span-1 py-4 cursor-pointer">
+                    &gt;
+                </div>
+                <!-- year -->
+                <div class="col-span-1 py-4 cursor-pointer">
+                    &lt;
+                </div>
+                <div class="col-span-1 py-4">
+                    {{ selectedYear }}
+                </div>
+                <div class="col-span-1 py-4 cursor-pointer">
+                    &gt;
+                </div>
+                <!-- days -->
+                <div v-for="day in days" :key="day.id" class="p-4">
+                    {{ day }}
+                </div>
+                <!-- dates -->
                 <div
-                    v-else
-                    class="p-4 cursor-pointer"
-                    @click="selectDay(day - monthFirstDay())"
+                    v-for="day in monthTotalDay() + monthFirstDay()"
+                    :key="day.id"
                 >
-                    {{ day - monthFirstDay() }}
+                    <div v-if="day <= monthFirstDay()"></div>
+                    <div
+                        v-else-if="day === selectedDay + monthFirstDay()"
+                        class="py-4 bg-gray-800 text-white rounded"
+                    >
+                        {{ day - monthFirstDay() }}
+                    </div>
+                    <div
+                        v-else
+                        class="py-4 cursor-pointer"
+                        @click="selectDay(day - monthFirstDay())"
+                    >
+                        {{ day - monthFirstDay() }}
+                    </div>
                 </div>
             </div>
-            <div class=" col-span-7 p-4 bg-white shadow" @click="close">
+            <button
+                class="p-4 bg-white shadow focus:outline-none focus:shadow-outline rounded"
+                @click="close"
+            >
                 Done
-            </div>
+            </button>
         </div>
     </div>
 </template>
